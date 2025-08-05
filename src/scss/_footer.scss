@@ -1,0 +1,24 @@
+@use 'settings'as*;
+
+footer {
+	width: 100%;
+	padding: fcp(28) 0;
+	background-color: #B5C9B1;
+	text-align: center;
+
+	& p {
+		font-size: fcp(15);
+		color: #fff;
+		font-weight: 500;
+	}
+}
+
+@include mq(tab) {
+	footer {
+		padding: fcs(14) 0;
+
+		& p {
+			font-size: fcs(10);
+		}
+	}
+}

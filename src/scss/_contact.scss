@@ -1,0 +1,147 @@
+@use 'settings'as*;
+
+section.contact {
+	width: 100%;
+	padding: fcp(100) 0;
+	background: #F8F4E6 url(../images/common/common_bg.png) top center / cover no-repeat;
+
+	& .container {
+		max-width: 960px;
+	}
+
+	& .contact_txt {
+		margin-bottom: fcp(50);
+		text-align: center;
+		font-size: fcp(20);
+		color: #2b2b2b;
+		font-weight: 500;
+	}
+
+	& .contact_cont {
+		width: 100%;
+		padding: fcp(50) 5%;
+		border-radius: fcp(40);
+		box-sizing: border-box;
+		box-shadow: 0 0 fcp(10) fcp(3) rgba($color: #000000, $alpha: 0.25);
+		background-color: #FBFAF7;
+
+		& .contact_item {
+			margin-bottom: fcp(40);
+
+			& p {
+				margin-bottom: fcp(10);
+				font-size: fcp(17);
+				color: #2b2b2b;
+				font-weight: 700;
+			}
+
+			& input {
+				display: block;
+				width: 100%;
+				height: fcp(45);
+				padding: fcp(5) fcp(10);
+				border: 1px solid #ccc;
+				border-radius: fcp(10);
+				box-sizing: border-box;
+				font-size: fcp(17);
+				color: #2b2b2b;
+
+				&:focus {
+					outline: none;
+					border-color: #2E5339;
+				}
+			}
+
+			& textarea {
+				display: block;
+				width: 100%;
+				height: fcp(225);
+				padding: fcp(10);
+				border: 1px solid #ccc;
+				border-radius: fcp(10);
+				box-sizing: border-box;
+				resize: none;
+				font-size: fcp(17);
+				color: #2b2b2b;
+				line-height: 1.3;
+
+				&:focus {
+					outline: none;
+					border-color: #2E5339;
+				}
+			}
+		}
+
+		& button {
+			display: block;
+			width: fcp(400);
+			padding: fcp(17) 0;
+			margin: 0 auto;
+			border: none;
+			border-radius: fcp(10);
+			background-color: #2E5339;
+			cursor: pointer;
+			font-size: fcp(23);
+			color: #fff;
+			font-weight: 700;
+		}
+	}
+}
+
+@include mq(pc, min) {
+	section.contact .container {
+		max-width: 960px;
+	}
+}
+
+@include mq(tab) {
+	section.contact {
+		padding: fcs(50) 0;
+
+		& .container {
+			max-width: 450px;
+		}
+
+		& .contact_txt {
+			margin-bottom: fcs(25);
+			font-size: fcs(13);
+			line-height: 1.3;
+		}
+
+		& .contact_cont {
+			padding: fcs(30) 5%;
+			border-radius: fcs(20);
+			box-shadow: 0 0 fcs(5) fcs(1) rgba($color: #000000, $alpha: 0.25);
+
+			& .contact_item {
+				margin-bottom: fcs(20);
+
+				& p {
+					margin-bottom: fcs(5);
+					font-size: fcs(13);
+				}
+
+				& input {
+					height: fcs(30);
+					padding: fcs(3) fcs(5);
+					border-radius: fcs(5);
+					font-size: fcs(13);
+				}
+
+				& textarea {
+					height: fcs(150);
+					padding: fcs(3) fcs(5);
+					border-radius: fcs(5);
+					font-size: fcs(13);
+				}
+			}
+
+			& button {
+				width: 100%;
+				padding: fcs(10) 0;
+				border-radius: fcs(5);
+				font-size: fcs(15);
+			}
+		}
+	}
+}

@@ -1,0 +1,140 @@
+@use 'settings'as*;
+
+section.about {
+	width: 100%;
+	padding: fcp(110) 0 fcp(100);
+	background: #F8F4E6 url(../images/common/common_bg.png) top center / cover no-repeat;
+
+	& .about_cont {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		& .img {
+			position: relative;
+			z-index: 1;
+			width: 30%;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: fcp(10);
+				left: fcp(10);
+				width: 100%;
+				aspect-ratio: 1/1;
+				border-radius: 100%;
+				background-color: #D5D1C6;
+				z-index: -1;
+			}
+		}
+
+		& .txt {
+			width: 60%;
+
+			& li {
+				display: flex;
+				align-items: baseline;
+				justify-content: left;
+				border-bottom: 1px solid #2b2b2b;
+
+				&:not(:last-of-type) {
+					margin-bottom: fcp(17);
+				}
+
+				& .head {
+					position: relative;
+					width: 15%;
+					padding-left: fcp(20);
+					font-size: fcp(17);
+					color: #2E5339;
+					font-weight: 700;
+					line-height: 1.6;
+					box-sizing: border-box;
+
+					&::before {
+						content: '';
+						position: absolute;
+						top: 50%;
+						left: 0;
+						transform: translateY(-50%);
+						width: fcp(15);
+						aspect-ratio: 1/1.0625;
+						background: url(../images/about/about_icon.png) center/cover no-repeat;
+					}
+				}
+
+				& .detail {
+					width: 85%;
+					font-size: fcp(17);
+					color: #2b2b2b;
+					font-weight: 500;
+					line-height: 1.6;
+
+					& span {
+						font-size: fcp(15);
+						color: #2b2b2b;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include mq(pc, min) {
+	section.about .container {
+		max-width: 960px;
+	}
+}
+
+@include mq(tab) {
+	section.about {
+		padding: fcs(55) 0 fcs(50);
+
+		& .container {
+			max-width: 450px;
+		}
+
+		& .about_cont {
+			display: block;
+
+			& .img {
+				width: 60%;
+				max-width: 250px;
+				margin: 0 auto fcs(20);
+
+				&::before {
+					top: fcs(5);
+					left: fcs(5);
+				}
+			}
+
+			& .txt {
+				width: 100%;
+
+				& li {
+					&:not(:last-of-type) {
+						margin-bottom: fcs(8);
+					}
+
+					& .head {
+						padding-left: fcs(13);
+						font-size: fcs(13);
+
+						&::before {
+							width: fcs(7);
+						}
+					}
+
+					& .detail {
+						font-size: fcs(13);
+
+						& span {
+							font-size: fcs(10);
+						}
+					}
+				}
+			}
+		}
+	}
+}
