@@ -18,36 +18,38 @@ $(function () {
 	});
 
 	// ハンバーガーメニュー
-	$(".hamburger").click(function () {
-		$(this).toggleClass("active");
-		$(".nav").toggleClass("active");
-	});
+	if (window.matchMedia('(max-width: 768px)').matches) {
+		$(".hamburger").click(function () {
+			$(this).toggleClass("active");
+			$(".nav").toggleClass("active");
+		});
 
-	var state = false;
-	var pos;
-	$(".hamburger").click(function () {
-		if (state == false) {
-			pos = $(window).scrollTop();
-			$("body").addClass("fixed");
-			state = true;
-		} else {
+		var state = false;
+		var pos;
+		$(".hamburger").click(function () {
+			if (state == false) {
+				pos = $(window).scrollTop();
+				$("body").addClass("fixed");
+				state = true;
+			} else {
+				$("body").removeClass("fixed").css({
+					top: 0
+				});
+				window.scrollTo(0, pos);
+				state = false;
+			}
+		});
+
+		$(".nav a").click(function () {
+			$(".nav").removeClass("active");
+			$(".hamburger").removeClass("active");
 			$("body").removeClass("fixed").css({
 				top: 0
 			});
 			window.scrollTo(0, pos);
 			state = false;
-		}
-	});
-
-	$(".nav a").click(function () {
-		$(".nav").removeClass("active");
-		$(".hamburger").removeClass("active");
-		$("body").removeClass("fixed").css({
-			top: 0
 		});
-		window.scrollTo(0, pos);
-		state = false;
-	});
+	}
 
 	// MV
 	if (!localStorage.getItem('visited')) {
